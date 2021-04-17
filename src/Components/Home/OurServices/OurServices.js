@@ -7,7 +7,7 @@ import Services from '../Services/Services';
 const OurServices = () => {
   const [allService, setallService] = useState([])
     useEffect( () => {
-        fetch('http://localhost:5000/allService')
+        fetch('https://agile-depths-84929.herokuapp.com/allService')
         .then(res => res.json())
         .then(data => {
         

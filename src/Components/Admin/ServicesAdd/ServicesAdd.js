@@ -26,7 +26,7 @@ const ServicesAdd = () => {
         formData.append('description', serviceInfo.description);
         formData.append('price', serviceInfo.price);
 
-        fetch('http://localhost:5000/addServices', {
+        fetch('https://agile-depths-84929.herokuapp.com/addServices', {
             method: 'POST',
             body: formData
         })

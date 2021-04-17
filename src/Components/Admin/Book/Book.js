@@ -10,7 +10,7 @@ const Book = () => {
     const [bookService, setBookService] = useState([]);
    
     useEffect(() => {
-        fetch('http://localhost:5000/Allbook/'+id)
+        fetch('https://agile-depths-84929.herokuapp.com/Allbook/'+id)
             .then(res => res.json())
             .then(data => {
                 console.log('check book data', data);
@@ -20,7 +20,7 @@ const Book = () => {
     const handleSubmit = () =>{
         const orderDetails = {...loggedInUser,title:bookService.title,description:bookService.description,price:bookService.price,orderTime:new Date()}
     
-    fetch('http://localhost:5000/addOrder',{
+    fetch('https://agile-depths-84929.herokuapp.com/addOrder',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(orderDetails)
