@@ -14,6 +14,7 @@ import ServicesAdd from './Components/Admin/ServicesAdd/ServicesAdd';
 import BookingList from './Components/Admin/BookingList/BookingList';
 import OrderList from './Components/Admin/OrderList/OrderList';
 import ManageService from './Components/Admin/ManageService/ManageService';
+import MakeAdmin from './Components/Admin/MakeAdmin/MakeAdmin';
 
 
 export const UserContext = createContext();
@@ -47,6 +48,10 @@ function App() {
           </Route >
           <Route path="/manageService">
             <ManageService></ManageService>
+          </Route>
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+
           </Route>
           <Route path="*">
             <Home></Home>
