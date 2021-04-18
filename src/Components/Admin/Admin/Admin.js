@@ -1,12 +1,11 @@
 import React from 'react';
-
-import ServicesAdd from '../ServicesAdd/ServicesAdd';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 const Admin = () => {
     return (
         <div>
-           <ServicesAdd></ServicesAdd>
+          <Sidebar></Sidebar>
            
         </div>
     );

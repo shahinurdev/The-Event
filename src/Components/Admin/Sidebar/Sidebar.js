@@ -2,21 +2,21 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers,faTasks } from '@fortawesome/free-solid-svg-icons';
+import {  faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers,faTasks } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
-import { UserContext } from '../../../App';
+
 
 const Sidebar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
     const [isAdmin, setIsAdmin] = useState(false);
+    console.log('check',isAdmin);
     useEffect(() => {
         fetch('https://agile-depths-84929.herokuapp.com/isAdmin')
         .then(res => res.json())
-        .then(data =>setIsAdmin(data))
+        .then(data =>{
+            setIsAdmin(data)
+            console.log('email',data);
+        })
     },[])
-    
-
 
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh",overflow: "hidden"}}>

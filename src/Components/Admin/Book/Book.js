@@ -16,7 +16,7 @@ const Book = () => {
                 console.log('check book data', data);
                 setBookService(data)
             })
-    }, []);
+    }, [id]);
     const handleSubmit = () =>{
         const orderDetails = {...loggedInUser,title:bookService.title,description:bookService.description,price:bookService.price,orderTime:new Date()}
     
