@@ -4,12 +4,14 @@ import OrderListAll from './OrderListAll';
 
 const OrderList = () => {
     const [orderList, setOrderList] = useState([])
+    console.log(orderList);
 
     useEffect(() => {
         fetch('https://agile-depths-84929.herokuapp.com/bookingList')
             .then(res => res.json())
             .then(data => {
                 setOrderList(data)
+        
             })
     }, [])
     return (

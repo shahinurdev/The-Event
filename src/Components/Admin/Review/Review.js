@@ -11,9 +11,10 @@ const Review = () => {
         const newReview ={...review};
         newReview[e.target.name] = e.target.value;
         setReview(newReview);
+       
     }
     const onSubmit = () => {
-        const submitReview = {...loggedInUser,review:{review}}
+        const submitReview = {...loggedInUser,...review}
         fetch('https://agile-depths-84929.herokuapp.com/review', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -31,9 +32,9 @@ const Review = () => {
         <Sidebar></Sidebar>
         <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
         <form action="" onSubmit={onSubmit} >
-            <input onBlur={handleBlur} type="text" required name='name' id=""/>
-            <input onBlur={handleBlur} type="text" required name='company' id=""/>
-            <input onBlur={handleBlur} type="text" required name='description' id=""/>
+            <input onBlur={handleBlur} placeholder='Name' type="text" required name='name' id=""/>
+            <input onBlur={handleBlur} placeholder='Company' type="text" required name='company' id=""/>
+            <input onBlur={handleBlur} placeholder='Description' type="text" required name='description' id=""/>
             <button className='btn btn-primary'>Submit</button>
 
         </form>
