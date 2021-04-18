@@ -8,13 +8,12 @@ import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 
 const Sidebar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
-    console.log('check',isAdmin);
+    
     useEffect(() => {
         fetch('https://agile-depths-84929.herokuapp.com/isAdmin')
         .then(res => res.json())
         .then(data =>{
             setIsAdmin(data)
-            console.log('email',data);
         })
     },[])
 
@@ -33,11 +32,17 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/review" className="text-white">
+                            <FontAwesomeIcon icon={faCalendar} /> <span>Review</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/bookingList" className="text-white">
                             <FontAwesomeIcon icon={faUsers} /> <span>BookingList</span>
                         </Link>
                     </li>
-                   {isAdmin && <div>
+                   {/* {isAdmin && 
+                   <div> */}
                     <li>
                         <Link to="/orderList" className="text-white">
                             <FontAwesomeIcon icon={faFileAlt} /> <span>OrderList</span>
@@ -58,7 +63,8 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faTasks} /> <span>Make Admin</span>
                         </Link>
                     </li>
-                    </div>}
+                    {/* </div>
+                    } */}
                 
             </ul>
             

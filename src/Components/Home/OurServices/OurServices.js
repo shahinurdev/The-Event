@@ -19,7 +19,8 @@ const OurServices = () => {
             <div className="container">
                 <h3>OUR MAIN SERVICES</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, omnis.</p>
-                <div className="row">
+               
+                <div className="row  d-flex justify-content-center">
                     {
                         allService.map(service=><Services service={service} key={service._id}></Services>)
                     }

@@ -21,4 +21,14 @@
 }
 
 
-.counter img{height:100px}
+.counter img{
+    height:100px;
+    width: 100px;
+    transition: width 2s;
+}
+.counter img:hover{
+    width: 150px;
+   
+}
+  
+ 
